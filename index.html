@@ -11,30 +11,35 @@
     
     <div class="container">
 
-        <form>
+        <form class="formBox">
             <i class="fas fa-paper-plane form-img"></i>
 
-            <div class="input-group">
+            <div class="input-group fullName-input">
                 <label class="input-title">Full Name</label>
                 <input type="text" placeholder="Enter your name">
+                <span class="error"></span>
             </div>
             
-            <div class="input-group">
+            <div class="input-group phoneNum-input">
                 <label class="input-title">Phone No.</label>
                 <input type="tel" placeholder="123 456 7890">
+                <span class="error"></span>
             </div>
 
-            <div class="input-group">
+            <div class="input-group email-input">
                 <label class="input-title">Email Id</label>
                 <input type="email" placeholder="Enter Email">
+                <span class="error"></span>
             </div>
 
-            <div class="input-group">
+            <div class="input-group message-input">
                 <label class="input-title">Your Message</label>
                 <textarea rows="5" placeholder="Enter your message"></textarea>
+                <span class="error"></span>
             </div>
 
             <button class="form-btn">Submit</button>
+            <span class="error form-error"></span>
         </form>
     </div>
 

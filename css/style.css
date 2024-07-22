@@ -14,7 +14,7 @@
     justify-content: center;
 }
 
-.container form{
+.container .formBox{
     width: 90%;
     max-width: 500px;
     padding: 50px 30px 20px;
@@ -23,7 +23,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
     position: relative;
 }
-.container form .form-img{
+.container .formBox .form-img{
     position: absolute;
     top: 0;
     left: 50%;
@@ -35,18 +35,18 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.container form .input-group{
+.container .formBox .input-group{
     width: 100%;
     display: flex;
     align-items: center;
     margin: 10px 0;
     position: relative;
 }
-.container form .input-group .input-title{
+.container .formBox .input-group .input-title{
     flex-basis: 28%;
 }
-.container form .input-group input ,
-.container form .input-group textarea{
+.container .formBox .input-group input ,
+.container .formBox .input-group textarea{
     flex-basis: 68%;
     background: transparent;
     border: 0;
@@ -56,17 +56,17 @@
     color: #333;
     font-size: 16px;
 }
-.container form .input-group input:focus::placeholder,
-.container form .input-group textarea:focus::placeholder{
+.container .formBox .input-group input:focus::placeholder,
+.container .formBox .input-group textarea:focus::placeholder{
     letter-spacing: 2px;
 }
 
-.container form .input-group ::placeholder{
+.container .formBox .input-group ::placeholder{
     font-size: 14px;
     transition: 0.2s;
 }
 
-.container form .form-btn{
+.container .formBox .form-btn{
     background: #141a34;
     color: #fff;
     border-radius: 4px;
@@ -79,8 +79,24 @@
     transition: 0.3s;
     font-weight: 600;
 }
-.container form .form-btn:hover{
+.container .formBox .form-btn:hover{
     background: #fff;
     color: #141a34;
     border-color: #141a34;
+}
+
+.container .formBox .input-group .error{
+    position: absolute;
+    bottom: 12px;
+    right: 17px;
+    font-size: 14px;
+    color: red;
+}
+.container .formBox .input-group .error i{
+    color: seagreen;
+}
+
+
+.container .formBox .form-error{
+    color: red;
 }
