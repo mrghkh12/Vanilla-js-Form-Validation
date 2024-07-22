@@ -12,6 +12,13 @@ phoneNumInput.addEventListener('keyup' , phoneValidation)
 emailInput.addEventListener('keyup' , emailValidation)
 messagInput.addEventListener('keyup' , messageValidation)
 
+
+const formSubmitBtn = formBox.querySelector('.form-btn')
+formSubmitBtn.addEventListener('click' , e => {
+    e.preventDefault()
+    formValidation()
+})
+
 function nameValidation(){
     const nameInputError = formBox.querySelector('.fullName-input span.error')
     
@@ -85,3 +92,15 @@ function messageValidation(){
     return true
 }
 
+
+function formValidation(){
+    let formSubmitError = formBox.querySelector('.form-error')
+    if(!nameValidation() || !phoneValidation() || !emailValidation() || !messageValidation()){
+        formSubmitError.style.display = 'block'
+        formSubmitError.innerHTML = 'Please fix error to submit'
+        setTimeout(()=>{formSubmitError.style.display = 'none';}, 3000)
+        return false
+    }else{
+        formBox.submit()
+    }
+}
