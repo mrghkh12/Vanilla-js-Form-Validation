@@ -2,44 +2,10 @@ const $ = document
 
 const formBox = $.querySelector('.formBox')
 
-formBox.addEventListener('click' , e => {
-    let inputElem = ['INPUT' , 'TEXTAREA'].includes(e.target.tagName ) ? e.target : null
-    let inputElemParent = e.target.parentElement
-    
-    if(inputElem && inputElemParent.classList.contains('fullName-input')){
-        let errorElem = inputElemParent.querySelector('span.error')
-        
-        inputElem.addEventListener('keyup' , () =>{
-            nameValidation(inputElem.value , errorElem)
-        })  
-    }
-    else if(inputElem && inputElemParent.classList.contains('phoneNum-input')){
-        let errorElem = inputElemParent.querySelector('span.error')
-        
-        inputElem.addEventListener('keyup' , () =>{
-            phoneValidation(inputElem.value , errorElem)
-        })  
-    }
-    else if(inputElem && inputElemParent.classList.contains('email-input')){
-        let errorElem = inputElemParent.querySelector('span.error')
-        
-        inputElem.addEventListener('keyup' , () =>{
-            emailValidation(inputElem.value , errorElem)
-        })  
-    }
-    else if(inputElem && inputElemParent.classList.contains('message-input')){
-        let errorElem = inputElemParent.querySelector('span.error')
-        
-        inputElem.addEventListener('keyup' , () =>{
-            messageValidation(inputElem.value , errorElem)
-        })  
-    }
-    
-
-})
 
 
-function nameValidation(nameInput , errorElem){
+
+function nameValidation(){
     if(nameInput.trim() === ''){
         errorElem.innerHTML  = 'Name is required'
         return false
@@ -54,7 +20,7 @@ function nameValidation(nameInput , errorElem){
 }
 
 
-function phoneValidation(phoneInput , errorElem){
+function phoneValidation(){
 
     if(phoneInput.trim() === ''){
         errorElem.innerHTML  = 'Phone number is required'
@@ -74,7 +40,7 @@ function phoneValidation(phoneInput , errorElem){
 }
 
 
-function emailValidation(emailInput , errorElem){
+function emailValidation(){
 
     if(emailInput.trim() === ''){
         errorElem.innerHTML  = 'Email is required'
@@ -90,7 +56,7 @@ function emailValidation(emailInput , errorElem){
 }
 
 
-function messageValidation(messageInput , errorElem){
+function messageValidation(){
 
     let leftOver = 30 - messageInput.length
 
@@ -106,3 +72,4 @@ function messageValidation(messageInput , errorElem){
     errorElem.innerHTML  = '<i class="fa-solid fa-circle-check"></i>'
     return true
 }
+
