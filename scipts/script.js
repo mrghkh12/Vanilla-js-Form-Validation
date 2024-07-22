@@ -20,6 +20,13 @@ formBox.addEventListener('click' , e => {
             phoneValidation(inputElem.value , errorElem)
         })  
     }
+    else if(inputElem && inputElemParent.classList.contains('email-input')){
+        let errorElem = inputElemParent.querySelector('span.error')
+        
+        inputElem.addEventListener('keyup' , () =>{
+            emailValidation(inputElem.value , errorElem)
+        })  
+    }
     
 
 })
@@ -52,6 +59,22 @@ function phoneValidation(phoneInput , errorElem){
     }
     if(!phoneInput.match(/^[0-9]{11}$/)){
         errorElem.innerHTML  = 'Only digits please'
+        return false
+    }
+
+    errorElem.innerHTML  = '<i class="fa-solid fa-circle-check"></i>'
+    return true
+}
+
+
+function emailValidation(emailInput , errorElem){
+
+    if(emailInput.trim() === ''){
+        errorElem.innerHTML  = 'Email is required'
+        return false
+    } 
+    if(!emailInput.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+        errorElem.innerHTML  = 'Email Invalid'
         return false
     }
 
