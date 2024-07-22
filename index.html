@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/a6243ca7b9.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="formBox">
+        <i class="fas fa-paper-plane form-img"></i>
+
+        <div class="input-group fullName-input">
+          <label class="input-title">Full Name</label>
+          <input type="text" placeholder="Enter your name" />
+          <span class="error"></span>
+        </div>
+
+        <div class="input-group phoneNum-input">
+          <label class="input-title">Phone No.</label>
+          <input type="tel" placeholder="123 456 7890" />
+          <span class="error"></span>
+        </div>
+
+        <div class="input-group email-input">
+          <label class="input-title">Email Id</label>
+          <input type="email" placeholder="Enter Email" />
+          <span class="error"></span>
+        </div>
+
+        <div class="input-group message-input">
+          <label class="input-title">Your Message</label>
+          <textarea rows="5" placeholder="Enter your message"></textarea>
+          <span class="error"></span>
+        </div>
+
+        <button class="form-btn">Submit</button>
+        <span class="error form-error"></span>
+      </form>
+    </div>
+
+    <script defer src="./scipts/script.js"></script>
+  </body>
+</html>
