@@ -34,3 +34,25 @@
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.container form .input-group{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+}
+.container form .input-group .input-title{
+    flex-basis: 28%;
+}
+.container form .input-group input ,
+.container form .input-group textarea{
+    flex-basis: 68%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+    color: #333;
+    font-size: 16px;
+}
