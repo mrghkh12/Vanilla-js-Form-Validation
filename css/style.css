@@ -56,3 +56,31 @@
     color: #333;
     font-size: 16px;
 }
+.container form .input-group input:focus::placeholder,
+.container form .input-group textarea:focus::placeholder{
+    letter-spacing: 2px;
+}
+
+.container form .input-group ::placeholder{
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.container form .form-btn{
+    background: #141a34;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: 10px 40px;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 10px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+.container form .form-btn:hover{
+    background: #fff;
+    color: #141a34;
+    border-color: #141a34;
+}
