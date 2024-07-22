@@ -13,6 +13,13 @@ formBox.addEventListener('click' , e => {
             nameValidation(inputElem.value , errorElem)
         })  
     }
+    else if(inputElem && inputElemParent.classList.contains('phoneNum-input')){
+        let errorElem = inputElemParent.querySelector('span.error')
+        
+        inputElem.addEventListener('keyup' , () =>{
+            phoneValidation(inputElem.value , errorElem)
+        })  
+    }
     
 
 })
@@ -25,6 +32,26 @@ function nameValidation(nameInput , errorElem){
     } 
     if(!nameInput.match(/^[A-Za-z]{3,}\s{1}[A-Za-z]{3,}$/)){
         errorElem.innerHTML  = 'Write full name'
+        return false
+    }
+
+    errorElem.innerHTML  = '<i class="fa-solid fa-circle-check"></i>'
+    return true
+}
+
+
+function phoneValidation(phoneInput , errorElem){
+
+    if(phoneInput.trim() === ''){
+        errorElem.innerHTML  = 'Phone number is required'
+        return false
+    } 
+    if(phoneInput.length !== 11){
+        errorElem.innerHTML  = 'Phone number should be 11 digits'
+        return false
+    }
+    if(!phoneInput.match(/^[0-9]{11}$/)){
+        errorElem.innerHTML  = 'Only digits please'
         return false
     }
 
