@@ -3,7 +3,7 @@ const $ = document
 const formBox = $.querySelector('.formBox')
 
 formBox.addEventListener('click' , e => {
-    let inputElem = e.target.tagName === 'INPUT' ? e.target : null
+    let inputElem = ['INPUT' , 'TEXTAREA'].includes(e.target.tagName ) ? e.target : null
     let inputElemParent = e.target.parentElement
     
     if(inputElem && inputElemParent.classList.contains('fullName-input')){
@@ -25,6 +25,13 @@ formBox.addEventListener('click' , e => {
         
         inputElem.addEventListener('keyup' , () =>{
             emailValidation(inputElem.value , errorElem)
+        })  
+    }
+    else if(inputElem && inputElemParent.classList.contains('message-input')){
+        let errorElem = inputElemParent.querySelector('span.error')
+        
+        inputElem.addEventListener('keyup' , () =>{
+            messageValidation(inputElem.value , errorElem)
         })  
     }
     
@@ -75,6 +82,24 @@ function emailValidation(emailInput , errorElem){
     } 
     if(!emailInput.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
         errorElem.innerHTML  = 'Email Invalid'
+        return false
+    }
+
+    errorElem.innerHTML  = '<i class="fa-solid fa-circle-check"></i>'
+    return true
+}
+
+
+function messageValidation(messageInput , errorElem){
+
+    let leftOver = 30 - messageInput.length
+
+    if(messageInput.trim() === ''){
+        errorElem.innerHTML  = 'Message is required'
+        return false
+    } 
+    if(messageInput.length < 30){
+        errorElem.innerHTML  = leftOver + ' more characters required'
         return false
     }
 
