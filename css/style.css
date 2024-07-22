@@ -100,3 +100,13 @@
 .container .formBox .form-error{
     color: red;
 }
+
+@media screen and (max-width: 400px) {
+    .container .formBox .input-group .input-title{
+        font-size: 12px;
+        width: 35%;
+    }
+    .container .formBox .input-group input {
+        width: 65%;
+    }
+}
